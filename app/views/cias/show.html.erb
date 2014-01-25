@@ -1,0 +1,9 @@
+<h1><%= @cia.nome %></h1>
+<h1><%= @cia.cod %></h1>
+
+<%= cl_image_tag(@cia.logo.full_public_id, 
+	:format => 'png',
+	:width => 50,
+    :crop => :scale,
+    alt: "#{@cia.nome}-#{@cia.cod}" )
+%>

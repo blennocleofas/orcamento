@@ -1,0 +1,62 @@
+
+<b>Titulo:</b>
+<br>
+<%= @orcamento.titulo %>
+<% if @orcamento.aereos.present? %>
+<div class="voos">
+	<h4>Voos</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>COD</th>
+					<th>CIA</th>
+					<th>VOO</th>
+					<th>PARTIDA</th>
+					<th>CHEGADA</th>
+					<th>ORIGEM</th>
+					<th>DESTINO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @orcamento.aereos.each do |orcamento|%>
+				<tr>
+					<td>#<%= orcamento.id %></td>
+					<td><%= orcamento.cia %></td>
+					<td><%= orcamento.voo %></td>
+					<td><%= orcamento.ida %></td>
+					<td><%= orcamento.volta %></td>
+					<td><%= orcamento.origem %></td>
+					<td><%= orcamento.destino %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+<% end %>
+
+<% if @orcamento.hotels.present? %>
+	<div class="hoteis">
+
+	<h4>Hoteis</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>COD</th>
+					<th>NOME</th>
+					<th>TIPO</th>
+					<th>FOTO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @orcamento.hotels.each do |hoteis|%>
+				<tr>
+					<td>#<%= hoteis.id %></td>
+					<td><%= hoteis.nome %></td>
+					<td><%= hoteis.tipo %></td>
+					<td><%= hoteis.foto %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+<% end %>

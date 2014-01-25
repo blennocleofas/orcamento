@@ -1,0 +1,52 @@
+// Place all the styles related to the orca controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "compass";
+@import "fonts";
+
+@mixin font-lana{
+	font-family: 'lane', sans-serif;
+	font-weight: normal;
+}
+.content{
+	width: 102%;
+}
+
+.select2-container .select2-choice {
+  height: 35px;
+  padding-top: 5px;
+}
+.topo{
+	.logo{
+		background: image-url("logo.png");
+		width: 354px;
+		height: 212px;
+		margin: 0px auto;
+	}
+	.centro{
+		width: 945px;
+		margin: 0px auto;
+		h1{
+			@include font-lana;
+			font-size: 3.7rem;
+			line-height: 3.5rem;
+			color: #fff;
+			text-align: center;
+			margin-bottom: -10px;
+		}
+		p{
+			@include font-lana;
+			text-align: center;
+			font-size: 1.7rem;
+			color: #fff;
+		}
+	}
+}
+
+.home-bg{
+	
+	background-color: #0487ae; // Old browsers
+	@include filter-gradient(#0487ae, #3f84bc, vertical); // IE6-9
+	@include background-image(linear-gradient(top,  #0487ae 0%,#3f84bc 100%));
+
+}

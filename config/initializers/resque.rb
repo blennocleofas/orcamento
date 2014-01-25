@@ -1,0 +1,1 @@
+Dir["/app/app/workers/*.rb"].each { |file| require file }

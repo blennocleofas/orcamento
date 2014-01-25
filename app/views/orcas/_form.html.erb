@@ -1,0 +1,182 @@
+<div class="row">
+<div class="large-12 columns">
+<%= nested_form_for @orcamento, :html => {:data => {:abide => ''}} do |f| %>
+
+
+<% if @orcamento.errors.any? %>
+  <div id="error_explanation">
+    <h2>Foi identificado <%= pluralize(@orcamento.errors.count, "error") %> ao enviar o formulo</h2>
+    <ul>
+    <% @orcamento.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+<div class="row">
+    <div class="small-12 columns">
+      <div class="row collapse">
+        <div class="small-10 columns">
+        	<%= f.text_field :titulo, placeholder: "Titulo", :required => '' %>
+        	<small class="error">Titulo não pode esta em branco</small>
+        </div>
+        <div class="small-2 columns">
+        	<input name="commit" type="submit" class="button postfix" value="Salvar">
+        </div>
+      </div>
+    </div>
+   </div>
+
+<dl class="tabs vertical" data-tab>
+
+  <dd class="active">
+  	<%= link_icon 'fa-users','Clientes', '#panel1a' %>
+  </dd>
+  <dd>
+  	<%= link_icon 'fa-plane','Aereos', '#panel2a' %>
+  </dd>
+  <dd>
+  	<%= link_icon 'fa-building-o','Hotéis', '#panel3a' %>
+  </dd>
+  <dd>
+  	<%= link_icon 'fa-users','Obs', '#panel4a' %>
+  </dd>
+</dl>
+<div class="tabs-content vertical">
+  <div class="content active" id="panel1a">
+  	<div class="row">
+	  	<div class="small-5 columns">
+	  		<h3><i class="fa fa-users"></i> Clientes</h3>
+	  	</div>
+  	</div>
+    <%= f.fields_for :clientes do |aereo_form| %>
+    <div class="panel callout radius">
+    <div class="row">
+   
+    	<div class="small-4 columns">
+    		<%= label_tag  :nome %>
+    		<%= aereo_form.text_field :nome, :required => '' %>
+    		<small class="error">Nome não pode esta em branco</small>
+    	</div>
+    	<div class="small-4 columns">
+    		<%= label_tag  :sobrenome%>
+    		<%= aereo_form.text_field :sobrenome, :required  => '' %>
+    		<small class="error">Insira o Sobrenome do Cliente</small>
+    	</div>
+    	<div class="small-4 columns">
+    		<%= label_tag  :email%>
+    		<%= aereo_form.text_field :email, :required => ''  %>
+    		<small class="error">Insira um e-mail valido</small>
+    	</div>
+
+    </div>
+        	<%= aereo_form.link_to_remove '<i class="fa fa-times"></i> Remove Campo'.html_safe %>
+    	</div>
+    <% end %>
+    <%= f.link_to_add '<i class="fa fa-plus"></i> Adicionar Cliente'.html_safe, :clientes, css: 'hide' %>
+  </div>
+  <div class="content" id="panel2a">
+  	  	<div class="row">
+  		  	<div class="small-5 columns">
+  		  		<h3><i class="fa fa-plane"></i> Aereos</h3>
+  		  	</div>
+  	  	</div>
+
+    <%= f.fields_for :aereos do |aereo_form| %>
+    <div class="panel callout radius">
+    <div class="row">
+    	<div class="small-4 columns left">
+    	</div>
+    	<div class="small-3 columns">
+    		<%= label_tag  :cia %>
+            <% cia_array = Cia.all.map { |cl| [cl.nome, cl.cod]}%>
+            <%= aereo_form.select( :cia, cia_array, class:'oi') %>
+
+    		<small class="error">Cia não pode esta em branco</small>
+    	</div>
+    	<div class="small-3 columns">
+    		<%= label_tag  :voo %>
+    		<%= aereo_form.text_field :voo %>
+    	</div>
+    	<div class="small-3 columns">
+    		<%= label_tag  :origem %>
+    		<%= aereo_form.text_field :origem %>
+    	</div>
+    	<div class="small-3 columns">
+    		<%= label_tag  :destino %>
+    		<%= aereo_form.text_field :destino %>
+    	</div>
+    	<div class="small-3 columns">
+    		<%= label_tag  "Data Ida" %>
+    		<%= aereo_form.text_field :ida, class: 'data_aereos' %>
+    	</div>
+    	<div class="small-3 columns left">
+    		<%= label_tag  "Data Volta" %>
+    		<%= aereo_form.text_field :volta, class: 'data_aereos' %>
+    	</div>
+    	<div class="small-3 columns left">
+    		<%= label_tag  :tarifa  %>
+    		<%= aereo_form.text_field :tarifa, class: 'dinheiro' %>
+    	</div>
+    	<div class="small-3 columns left">
+    		<%= label_tag  :taxa  %>
+    		<%= aereo_form.text_field :taxa, class: 'dinheiro' %>
+    	</div>
+    </div>
+    	<%= aereo_form.link_to_remove '<i class="fa fa-times"></i> Remove Campo'.html_safe %>
+    	</div>
+    <% end %>
+
+    <p>
+    	<%= f.link_to_add '<i class="fa fa-plus"></i> Aereo'.html_safe, :aereos %>
+    </p>
+  </div>
+  <div class="content" id="panel3a">
+  	  	<div class="row">
+  		  	<div class="small-5 columns">
+  		  		<h3><i class="fa fa-building-o"></i> Hotéis</h3>
+  		  	</div>
+  	  	</div>
+    <%= f.fields_for :hotels do |h| %>
+    <div class="custom-panel radius">
+    <div class="row">
+    	<div class="small-3 columns left">
+    		<%= label_tag :nome %>
+    		<%= h.text_field :nome, class: 'nome' %>
+    	</div>
+    	
+    	<div class="small-3 columns left">
+    		<%= label_tag :tipo %>
+    		<%= h.text_field :tipo%>
+    	</div>
+
+    		<%= h.hidden_field :foto %>
+
+    	<div class="small-3 columns left">
+    		<%= label_tag "Check-in:" %>
+    		<%= h.text_field :data_ida, class: "datepicker" %>
+    	</div>
+    	<div class="small-3 columns left">
+    		<%= label_tag "Check-out:" %>
+    		<%= h.text_field :data_volta, class: "datepicker" %>
+    	</div>
+
+    </div>
+    <%= h.link_to_remove '<i class="fa fa-times"></i> Remove Campo'.html_safe %>
+    </div>
+    <% end %>
+
+    <p>
+    	<%= f.link_to_add '<i class="fa fa-plus"></i> Hotels'.html_safe, :hotels %>
+    </p>
+
+  </div>
+  <div class="content" id="panel4a">
+    <p>Outros</p>
+  </div>
+</div>
+
+</div>
+<% end %>
+</div>

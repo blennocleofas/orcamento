@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: orcamento_dev
+  pool: 5
+  username: blenno
+  password: 123456
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: orcamento_test
+  pool: 5
+  username: blenno
+  password: 123456
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: 'pr'
+  pool: 5
+  username: 'pr'
+  password: 'annie27147'
+  host: 'pr.cryf1o0dfwj6.sa-east-1.rds.amazonaws.com'
+  port: 5432

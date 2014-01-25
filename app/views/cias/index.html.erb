@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="large-9 medium-8 columns">
+		<h1>Lista de Cias</h1>
+			<table>
+			  <thead>
+			    <tr>
+			      <th>Cia</th>
+			      <th>Codigo</th>
+			      <th>Logo</th>
+			      <th>Visualizar</th>
+			      <th>Editar</th>
+			      <th>Apagar</th>
+
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <% @cia.each do |c| %>
+			    <tr>
+			    	<td><%= c.nome %></td>
+			    	<td><%= c.cod %> </td>
+			    	<td><%= logo_operadora c.logo.full_public_id, c.nome %> </td>
+			    	<td><%= link_to "Visualizar", cia_path(c) %></td>
+			    	<td><%= link_to "Editar", edit_cia_path(c) %></td>
+			    	<td><%= link_to 'Apagar', cia_path(c),
+                    method: :delete, data: { confirm: "Tem certeza que deseja apagar o cia #{c.nome}" } %></td>
+			    </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+	</div>
+</div>
+<div class="row">
+	<div class="large-4 columns">
+		<%= link_to "Criar Novo", new_cia_path %>
+	</div>
+</div>

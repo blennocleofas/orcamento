@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  foto: MyString
+  periodo: MyString
+  tipo: MyString
+  regime_alimentacao: MyString
+  cortesia: MyString
+  tarifa: MyString
+  taxa: MyString
+
+two:
+  foto: MyString
+  periodo: MyString
+  tipo: MyString
+  regime_alimentacao: MyString
+  cortesia: MyString
+  tarifa: MyString
+  taxa: MyString

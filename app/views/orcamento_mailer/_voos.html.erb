@@ -1,0 +1,79 @@
+
+<div class="voos">
+  <div class="titulo">
+    <h2 style='margin-bottom: 2px;'>Voos</h2>
+  </div>
+    <table style="
+      background: white;
+  margin-bottom: 1.25rem;
+  border: solid 1px #dddddd;">
+        <thead style="
+    background: whitesmoke;  font-weight: bold;
+">
+          <tr style="
+    box-sizing: border-box;
+">
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;
+">CIA</th>
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;">VOO</th>
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;">PARTIDA</th>
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;">CHEGADA</th>
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;">ORIGEM</th>
+            <th style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;">DESTINO</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            <% @orcamento.aereos.each do | v | %>
+            <tr>
+                 <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;"><%= logo_find(v.cia) %></td>
+            <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;"><%= v.voo %></td>
+            <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;
+"><%= v.ida %></td>
+            <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;
+"> <%= v.volta %></td>
+            <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;
+"> <%= v.origem%></td>
+            <td style=" padding: 0.5625rem 0.625rem;
+    font-size: 0.875rem;
+    color: #222222;
+    text-align: center;
+"> <%= v.destino %> </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+      </div>

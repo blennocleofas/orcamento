@@ -1,0 +1,31 @@
+<div class="row">
+
+	<%= form_for @cia, url: cias_path, :html => { :multipart => true, :data => {:abide => ''} } do |f| %>
+	 <fieldset>
+   	 <legend>Cadastra Nova Cia Aéreas</legend>
+		<div class="row">
+		  <div class="large-8 columns">
+			<%= f.label :nome %>
+			<%= f.text_field :nome, :required => '' %>
+			<small class="error">Nome Inválido</small>
+		   </div>
+			<div class="large-4 columns left">
+				<%= f.label :cod, "Codigo da Cia" %>
+				<%= f.text_field :cod, :required => '' %>
+				<small class="error">Cod Inválido</small>
+			</div>
+			<div class="large-12 columns left">
+
+				<%= f.label :logo, "Logotipo da Cia" %>
+				<%= image_tag(@cia.logo_url) if @cia.logo? %>
+				<%= f.file_field :logo %>
+			</div>
+
+		</div>
+
+		<%= f.submit "Criar Novo", :disable_with => 'Criar Novoing...' %>
+		 </fieldset>
+	<% end %>
+
+</div>
+

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html><head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <style type="text/css">
+    
+    </style>
+  </head>
+  <body style="
+    font-family: Arial;  font-style: normal;
+">
+<div class="topo" style="
+    width: 497px;
+">
+  <p style="
+    text-align: justify;
+    font-family: Arial;
+">
+
+    Prezado(a) <b><%= @cliente.nome_completo.upcase %></b>,
+  </p>
+    <p style="
+    text-align: justify;
+    font-family: Arial;
+">
+        Seu Orçamento foi efetuado com sucesso. Para maiores informações ou detalhes sobre os itens solicitados, entre em contato com nossa central de atendimento.
+  </p>
+
+    <p style="
+    text-align: justify;
+    font-family: Arial;
+">
+      Obrigado por fazer sua reserva com a <b><a href="http://www.proximoembarque.com.br"></a>proximoembarque.com.br</b>.
+  </p>
+</div>
+<%= render :partial => 'voos' %>
+  
+ </body></html>
