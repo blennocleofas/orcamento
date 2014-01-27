@@ -1,3 +1,5 @@
+<div class="tp-menu">
+<div class="row">
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
@@ -8,20 +10,22 @@
 
   <section class="top-bar-section">
 
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li><a href="#"><i class="fa fa-user"></i> Olá Blenno Cleofas</a></li>
-    </ul>
-
     <!-- Left Nav Section -->
-    <ul class="left">
-      <li class="active"><a href="#">Home</a></li>
+    <ul class="right">
+      <li class="active"><%= link_to "Home", orcas_path %></li>
+
      
       <li class="has-dropdown">
         <a href="#">Orçamento</a>
         <ul class="dropdown">
-          <li><a href="#">Novo</a></li>
-          <li><a href="#">Lista</a></li>
+          <li><%= link_to "Novo Orçamento", new_orca_path %></li>
+        </ul>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#">Clientes</a>
+        <ul class="dropdown">
+          <li><%= link_to "Buscar Cliente", new_orca_path %></li>
         </ul>
       </li>
 
@@ -32,15 +36,10 @@
           <li><a href="#">Telefone</a></li>
         </ul>
       </li>
-
-      <li class="has-dropdown">
-        <a href="#">Gerenciar</a>
-        <ul class="dropdown">
-          <li><a href="#">Cias</a></li>
-        </ul>
-      </li>
     </ul>
 
 
   </section>
 </nav>
+</div>
+</div>

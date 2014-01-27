@@ -39,9 +39,25 @@ jQuery(function($){
 
 $( ".datepicker" ).datepicker();
 $('form').on('nested:fieldAdded', function(event) {
+    var cl = 'ls-' + event.timeStamp;
+    console.log(cl);
+    $(event.target).find('.cloudinary-fileupload').addClass(cl).removeClass(".cloudinary-fileupload");
 	$('.data_aereos').autotab({ maxlength: 13 });
 	$(".data_aereos").mask("99/99 - 99:99");
 	$('.dinheiro').mask("#.##0,00", {reverse: true, maxlength: false});
 	$( ".datepicker" ).datepicker();
     $("select[name*='cia']").select2({ width: 'resolve' });
+
+    $(cl).bind('cloudinarydone', function(e, data) {   
+        console.log(data.result.public_id);
+        console.log($(this).parent().find('.foto_alvo'));
+     return true;
+    });
+});
+
+
+$('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {   
+    console.log(data.result.public_id);
+    console.log($(this).parent().find('.foto_alvo'));
+ return true;
 });

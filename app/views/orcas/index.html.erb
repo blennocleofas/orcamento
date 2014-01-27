@@ -1,36 +1,39 @@
+<div class="row">
+<div class="small-12 columns">	
+	<div class="tt">
+		<h4><i class="fa fa-cogs"></i> Gerenciar Orçamentos</h4>
+	</div>
+</div>
 
-<div class="ct">
-<h1>Lista de Orçamentos</h1>
-
-
+<div class="small-12 columns">	
 <table>
 	<thead>
 		<tr>
 			<th>ID</th>
-			<th class="text-center" >Titulo</th>
-			<th class="text-center" >Cliente</th>
-			<th class="text-center" >Voos</th>
-			<th class="text-center" >Hoteis</th>
-			<th class="text-center" >Link</th>
-			<th class="text-center" >Apagar</th>
+			<th width='300px' >Titulo</th>
+			<th width='300px'>Cliente</th>
+			<th>Voos</th>
+			<th>Hoteis</th>
+			<th>Link</th>
+			<th>Apagar</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @orcamento.each do |orcamento|%>
 		<tr>
-			<td class="text-center"><%= orcamento.id %></td>
-			<td class="text-center"> <%= orcamento.titulo %> </td>
+			<td><%= orcamento.id %></td>
+			<td> <%= orcamento.titulo %> </td>
 			<% if orcamento.clientes.first.present? %>
-				<td class="text-center"><%= orcamento.clientes.first.nome_completo %></td>
+				<td><%= orcamento.clientes.first.nome_completo %></td>
 			<% else %>
-				<td class="text-center"> Desconhecido </td>
+				<td> Desconhecido </td>
 			<% end %>										
-			<td class="text-center"><%= orcamento.aereos.count %></td>
-			<td class="text-center"><%= orcamento.hotels.count %></td>
-			<td class="text-center">
+			<td><%= orcamento.aereos.count %></td>
+			<td><%= orcamento.hotels.count %></td>
+			<td>
 				<%= link_to "Visualizar", orca_path(orcamento) %> | <%= link_to "Editar", edit_orca_path(orcamento) %>
 			</td>
-			<td class="text-center">
+			<td>
 
 				<%= link_to 'Apagar', orca_path(orcamento),
                     method: :delete, data: { confirm: "Tem certeza que deseja apagar o orçamento #{orcamento.titulo}" } %></td>
@@ -38,5 +41,7 @@
 		<% end %>
 	</tbody>
 </table>
-	<%= link_to "Novo Orçamento", new_orca_path, :class => "button"%>
+</div>
+<div class="small-12 columns">	
+</div>
 </div>
