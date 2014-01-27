@@ -1,3 +1,10 @@
+GIT
+  remote: git@bitbucket.org:blenno/font-lane.git
+  revision: b5a22077b81c1d88846917856866cabb2220002f
+  specs:
+    font_lane (0.0.1)
+      railties (>= 3.2, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -197,6 +204,7 @@ DEPENDENCIES
   dalli
   delayed_job_active_record
   font-awesome-sass
+  font_lane!
   foreman
   foundation-rails
   httparty

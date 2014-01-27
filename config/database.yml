@@ -1,12 +1,12 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: orcamento_dev
+  database: <%= ENV['D_DB'] %>
   pool: 5
-  username: blenno
-  password: 123456
-  host: localhost
-  port: 5432
+  username: <%= ENV['D_DB_USER'] %>
+  password: <%= ENV['D_DB_PASS'] %>
+  host: <%= ENV['D_DB_HOST'] %>
+  port: <%= ENV['D_DB_PORT'] %>
 
 test:
   adapter: postgresql
@@ -21,9 +21,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: 'pr'
+  database: <%= ENV['P_DB'] %>
   pool: 5
-  username: 'pr'
-  password: 'annie27147'
-  host: 'pr.cryf1o0dfwj6.sa-east-1.rds.amazonaws.com'
-  port: 5432
+  username: <%= ENV['P_DB_USER'] %>
+  password: <%= ENV['P_DB_PASS'] %>
+  host: <%= ENV['P_DB_HOST'] %>
+  port: <%= ENV['P_DB_PORT'] %>

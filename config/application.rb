@@ -21,6 +21,8 @@ module Orcamento
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w( mkt.js )
+    config.assets.precompile += %w( mkt.css )
     config.time_zone = 'Brasilia'
   end
 end
