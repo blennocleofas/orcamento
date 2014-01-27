@@ -1,2 +1,2 @@
-web:    bundle exec puma -e production  -b unix:///var/www/orcamento/my_app.sock
+web:    bundle exec puma -e development  
 worker: bundle exec sidekiq

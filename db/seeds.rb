@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+cias = Cia.create(
+	[
+		{nome: 'GOL', cod: 'G3' logo: 'v1390826607/jfjkp1pe8gmo5axjnvs6.png'},
+		{nome: 'AZUL', cod: 'AD' logo: 'v1390826624/fir3framnytl4qfzwap6.png'}
+
+	]
+)
+cias.save!

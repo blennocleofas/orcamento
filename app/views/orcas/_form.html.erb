@@ -1,3 +1,4 @@
+
 <div class="row">
 <div class="large-12 columns">
 <%= nested_form_for @orcamento, :html => {:data => {:abide => ''}} do |f| %>
@@ -151,8 +152,6 @@
     		<%= h.text_field :tipo%>
     	</div>
 
-    		<%= h.hidden_field :foto %>
-
     	<div class="small-3 columns left">
     		<%= label_tag "Check-in:" %>
     		<%= h.text_field :data_ida, class: "datepicker" %>
@@ -161,6 +160,10 @@
     		<%= label_tag "Check-out:" %>
     		<%= h.text_field :data_volta, class: "datepicker" %>
     	</div>
+      <div class="small-3 columns left">
+          <%= h.hidden_field :foto %>
+          <%= cl_image_upload_tag('foto') %>
+      </div>
 
     </div>
     <%= h.link_to_remove '<i class="fa fa-times"></i> Remove Campo'.html_safe %>

@@ -13,13 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require turbolinks
 //= require jquery_nested_form
 //= require foundation
 //= require jquery.mask.min
 //= require select2
 //= require jquery.autotab.min
 //= require select2_locale_"pt-BR"
+//= require cloudinary
+
 
 $(function(){ $(document).foundation(); });
 $(document).ready(function() { $("select[name*='cia']").select2({ width: 'resolve' }); });

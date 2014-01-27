@@ -10,7 +10,11 @@ class OrcasController < ApplicationController
 
   def show
     @orcamento = Orca.find(params[:id])
-    EnviarEmail.perform_async(@orcamento.id)
+    if Rails.env.production?  
+      EnviarEmail.perform_async(@orcamento.id)
+    else
+      #OrcamentoMailer.orcamento_email(@orcamento).deliver
+    end
     #EnviarEmail.perform_in(30.seconds, @orcamento.id)
   end
 
@@ -68,7 +72,7 @@ class OrcasController < ApplicationController
     def orcamento_params
       params.require(:orca).permit(:titulo, 
       clientes_attributes: [:id, :nome, :sobrenome, :email, :_destroy],
-      aereos_attributes: [:id, :voo, :cia, :ida, :volta, :origem, :destino, :_destroy],
+      aereos_attributes: [:id, :voo, :cia, :ida, :volta, :origem, :destino, :tarifa, :taxa, :_destroy],
       hotels_attributes: [:id, :nome, :foto, :tipo,:data_ida, :data_volta, :_destroy])
     end
 end

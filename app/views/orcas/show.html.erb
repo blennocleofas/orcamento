@@ -53,7 +53,12 @@
 					<td>#<%= hoteis.id %></td>
 					<td><%= hoteis.nome %></td>
 					<td><%= hoteis.tipo %></td>
-					<td><%= hoteis.foto %></td>
+					<td><%= cl_image_tag(hoteis.foto,
+							:format => 'png',
+							:width => 250,
+							:crop => :scale,
+							alt: "#{hoteis.nome}")  
+						%></td>
 				</tr>
 				<% end %>
 			</tbody>
