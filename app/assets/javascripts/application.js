@@ -39,25 +39,40 @@ jQuery(function($){
 
 $( ".datepicker" ).datepicker();
 $('form').on('nested:fieldAdded', function(event) {
-    var cl = 'ls-' + event.timeStamp;
-    console.log(cl);
-    $(event.target).find('.cloudinary-fileupload').addClass(cl).removeClass(".cloudinary-fileupload");
+    var ad = 'ad-' + event.timeStamp;
+    $(event.target).find('.cloudinary-fileupload').addClass(ad).removeClass('cloudinary-fileupload');
 	$('.data_aereos').autotab({ maxlength: 13 });
 	$(".data_aereos").mask("99/99 - 99:99");
 	$('.dinheiro').mask("#.##0,00", {reverse: true, maxlength: false});
 	$( ".datepicker" ).datepicker();
     $("select[name*='cia']").select2({ width: 'resolve' });
 
-    $(cl).bind('cloudinarydone', function(e, data) {   
+    $('.'+ad).cloudinary_fileupload();
+    
+    $('.'+ad).bind('cloudinarydone', function(e, data) {   
         console.log(data.result.public_id);
-        console.log($(this).parent().find('.foto_alvo'));
+        $(this).parent().find('input.foto_alvo').val(data.result.public_id);
+        $(this).parent().parent().find('.pr-foto > .progress').addClass('success');
      return true;
     });
+    $('.'+ad).bind('fileuploadprogress', function(e, data) { 
+      $(this).hide();
+      $(this).parent().parent().find('.pr-foto > .progress > .meter').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+      $(this).parent().parent().find('.pr-foto > .progress').removeClass('hide');
+    });
+
+
 });
 
 
 $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {   
     console.log(data.result.public_id);
-    console.log($(this).parent().find('.foto_alvo'));
+    $(this).parent().find('.foto_alvo').attr('name',data.result.public_id);
  return true;
+});
+
+$('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) { 
+  $(this).hide();
+  $(this).parent().parent().find('.pr-foto > .progress > .meter').css('width', Math.round((data.loaded * 100.0) / data.total) + '%'); 
+  console.log($(this).parent().parent().find('.pr-foto > .progress').removeClass('hide'));
 });

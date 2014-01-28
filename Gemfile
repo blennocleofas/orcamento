@@ -56,6 +56,7 @@ gem 'slim'
 gem 'foreman'
 gem 'modernizr-rails'
 gem 'dalli'
+gem "omniauth-google-oauth2"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -164,6 +164,13 @@
           <%= h.hidden_field :foto, class: "foto_alvo" %>
           <%= cl_image_upload_tag('foto') %>
       </div>
+      <div class="small-12 columns left pr-foto">
+        <div class="progress small-4 hide">
+          <span class="meter" style="width: 0%"></span>
+        </div>
+
+      </div>
+
 
     </div>
     <%= h.link_to_remove '<i class="fa fa-times"></i> Remove Campo'.html_safe %>

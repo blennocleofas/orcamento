@@ -14,12 +14,23 @@
 }
 .tp-menu{
 	background: #333333;
+	margin-bottom: 12px;
 }
 .tt{
 	h4{
 		text-transform: uppercase;
 		font-weight: 900;
 		font-size: 1.4rem;
+	}
+}
+.prs{
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 0.8rem;
+}
+.pr-foto{
+	div.progress {
+		width: 157px;
 	}
 }
 .content{

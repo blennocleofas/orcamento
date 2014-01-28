@@ -1,10 +1,17 @@
+<div class="row">
 
-<b>Titulo:</b>
+
 <br>
-<%= @orcamento.titulo %>
+<h3>
+	<b>
+		<i class="fa fa-folder-open-o"></i> <%= @orcamento.titulo.upcase %> #<%= @orcamento.id %>
+	</b>
+</h3>
 <% if @orcamento.aereos.present? %>
 <div class="voos">
-	<h4>Voos</h4>
+	<div class="tt">
+		 <h4><i class="fa fa-plane"></i> Voos</h4>
+	</div>
 		<table>
 			<thead>
 				<tr>
@@ -18,10 +25,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% @orcamento.aereos.each do |orcamento|%>
+				<% @orcamento.aereos.order(created_at: :asc).each do |orcamento|%>
 				<tr>
 					<td>#<%= orcamento.id %></td>
-					<td><%= orcamento.cia %></td>
+					<td><%= logo_find(orcamento.cia) %></td>
 					<td><%= orcamento.voo %></td>
 					<td><%= orcamento.ida %></td>
 					<td><%= orcamento.volta %></td>
@@ -37,7 +44,9 @@
 <% if @orcamento.hotels.present? %>
 	<div class="hoteis">
 
-	<h4>Hoteis</h4>
+	<div class="tt">
+		 <h4><i class="fa fa-building-o"></i> Hoteis</h4>
+	</div>
 		<table>
 			<thead>
 				<tr>
@@ -55,7 +64,8 @@
 					<td><%= hoteis.tipo %></td>
 					<td><%= cl_image_tag(hoteis.foto,
 							:format => 'png',
-							:width => 250,
+							:width => 180,
+							:height => 108,
 							:crop => :scale,
 							alt: "#{hoteis.nome}")  
 						%></td>
@@ -65,3 +75,4 @@
 		</table>
 	</div>
 <% end %>
+</div>
