@@ -20,10 +20,19 @@
 //= require jquery.autotab.min
 //= require select2_locale_"pt-BR"
 //= require cloudinary
+//= require footable-rails
 
-
+$('table').footable();
 $(function(){ $(document).foundation(); });
-$(document).ready(function() { $("select[name*='cia']").select2({ width: 'resolve' }); });
+$(document).ready(function() {
+    $("select[name*='cia']").select2({ width: 'resolve' });
+    
+    $("#servicos").select2({ 
+      width: 'resolve',
+      heigth: 'resolve', 
+      placeholder: "Selecionar Serviços" 
+    });
+});
 jQuery(function($){
 	 $('.dinheiro').mask("#.##0,00", {reverse: true, maxlength: false});
      $('.data_aereos').autotab({ maxlength: 13 });

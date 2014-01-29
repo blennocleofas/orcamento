@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="Rails or-amento-proximo: development" uuid="fed43219-000c-4777-a7b6-1fde01969c68">
+  <data-source source="LOCAL" name="Rails orcamento: development" uuid="932bc892-7b4f-4fdd-835a-10772486ee48">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails or-amento-proximo: test" uuid="42016fa1-303a-48ac-bceb-ec78fcb09a4b">
+  <data-source source="LOCAL" name="Rails orcamento: test" uuid="730a0133-0a46-4532-9f43-cf41b8f164c9">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
-  <data-source source="LOCAL" name="Rails or-amento-proximo: production" uuid="571d09e3-a868-414a-bfb7-a52dc81b7b14">
+  <data-source source="LOCAL" name="Rails orcamento: production" uuid="95837ca7-157f-473a-ab52-b369f6454680">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
 </component>

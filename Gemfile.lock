@@ -74,6 +74,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-sass (4.0.2)
       sass-rails (>= 3.1.1)
+    footable-rails (0.0.1)
+      railties (>= 3.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -228,6 +230,7 @@ DEPENDENCIES
   delayed_job_active_record
   font-awesome-sass
   font_lane!
+  footable-rails
   foreman
   foundation-rails
   httparty
