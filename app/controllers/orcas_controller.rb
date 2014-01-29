@@ -1,5 +1,6 @@
 require 'httparty'
 class OrcasController < ApplicationController
+  before_action :login
   def edit
     @orcamento = Orca.find(params[:id])
   end

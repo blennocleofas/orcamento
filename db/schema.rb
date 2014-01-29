@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128185138) do
+ActiveRecord::Schema.define(version: 20140129133838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,26 @@ ActiveRecord::Schema.define(version: 20140128185138) do
   end
 
   add_index "aereos", ["orca_id"], name: "index_aereos_on_orca_id", using: :btree
+
+  create_table "atendimentos", force: true do |t|
+    t.string   "nome_completo"
+    t.string   "origem"
+    t.string   "destino"
+    t.string   "tipo"
+    t.string   "adultos"
+    t.string   "criancas"
+    t.string   "nenem"
+    t.string   "data_ida"
+    t.string   "data_volta"
+    t.string   "data_compra"
+    t.string   "data_retorno_contato"
+    t.string   "telefone"
+    t.string   "email"
+    t.string   "obs"
+    t.string   "status_fila"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cia", force: true do |t|
     t.string   "nome"

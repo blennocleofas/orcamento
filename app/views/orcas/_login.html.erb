@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="small-5 columns right" style="
+	    text-align: right;
+	">
+		<div id="user-widget">
+		  <% if current_user %>
+		    Olá <strong><%= current_user.name %></strong>!
+		    <%= link_to "Sair", signout_path, id: "sign_out" %>
+		  <% else %>
+		    <%= link_to "Efetuar Login", "/auth/google_oauth2", id: "sign_in" %>
+		  <% end %>
+		</div>
+	</div>
+</div>
