@@ -30,7 +30,7 @@ class AtendimentosController < ApplicationController
   end
 
   def cliente
-    @cliente = Cliente.search(params[:q])
+    @cliente = Cliente.regular_search(params[:q])
     render :json => @cliente, :callback => params[:callback]
   end
   private 
