@@ -1,0 +1,55 @@
+.row
+  .large-12.columns
+    = nested_form_for @atendimento, :html => {:data => {:abide => ''}} do |f|
+      %fieldset
+        %legend Novo Atendimento
+        - if @atendimento.errors.any?
+          #error_explanation
+            %h2
+              Foi identificado #{pluralize(@atendimento.errors.count, "error")} ao enviar o formulo
+            %ul
+              - @atendimento.errors.full_messages.each do |msg|
+                %li= msg
+        .row
+          .large-6.columns.left
+            = label_tag  "Nome Cliente"
+            = f.text_field :cliente_id, class: 'b-nome', :required => '',:placeholder => 'Nome Completo'
+          .large-3.columns.left
+            = label_tag :email
+            = f.text_field :email,:placeholder => 'nome@email.com.br'
+          .large-3.columns.left
+            = label_tag  :telefone
+            = f.text_field :telefone, :required => '', :placeholder => '(xx) 9999-999'
+        .row
+          .large-3.columns.left
+            = label_tag  :origem
+            = f.text_field :origem, :required => '', :placeholder => 'Origem'
+          .large-3.columns.left
+            = label_tag  :destino
+            = f.text_field :destino, :required => '', :placeholder => 'Destino'
+          .large-3.columns.left
+            = label_tag  :data_ida
+            = f.text_field :data_ida, :required => '', :placeholder => 'DD/MM/AAAA'
+          .large-3.columns.left
+            = label_tag  :data_volta
+            = f.text_field :data_volta, :required => '', :placeholder => 'DD/MM/AAAA'
+        .row
+          .large-1.columns.left
+            = label_tag  'Adultos'
+            = f.text_field :adultos, :required => '', :placeholder => '0-10'
+          .large-1.columns.left
+            = label_tag  'Crianças'
+            = f.text_field :criancas, :required => '', :placeholder => '0-10'
+          .large-1.columns.left
+            = label_tag  'Bebês'
+            = f.text_field :nenem, :required => '', :placeholder => '0-10'
+
+        .row
+          .large-12.columns
+            %label Observações
+            = f.text_area :obs,                         |
+              :placeholder => 'Observaçoes Adicionais', |
+              class: 'atendimento_obs'                  |
+        .row
+          .large-12.columns
+            = f.submit "Salvar"

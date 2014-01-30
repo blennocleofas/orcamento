@@ -20,17 +20,18 @@
 //= require jquery.autotab.min
 //= require select2_locale_"pt-BR"
 //= require cloudinary
-//= require footable-rails
+//= require selectize
+//= require busca_cliente
 
-$('table').footable();
 $(function(){ $(document).foundation(); });
 $(document).ready(function() {
     $("select[name*='cia']").select2({ width: 'resolve' });
-    
-    $("#servicos").select2({ 
+    $('#servicos').selectize();
+
+    $("#tipo").select2({ 
       width: 'resolve',
       heigth: 'resolve', 
-      placeholder: "Selecionar Serviços" 
+      placeholder: "Tipo de Atendimento" 
     });
 });
 jQuery(function($){

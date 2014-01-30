@@ -12,6 +12,24 @@
 	margin-left: 15px;
 	margin-right: 15px;
 }
+.b-nome{
+	.selectize-input{
+		height: 37px;
+		input{
+			margin-top: -8px !important;
+		}
+	}
+}
+span.n {
+  margin: 0px 3px 0px 0px;
+  font-weight: bold;
+}
+span.e:before{
+  content: '<';
+}
+span.e:after{
+  content: '>';
+}
 .tp-menu{
 	background: #333333;
 	margin-bottom: 12px;
@@ -20,6 +38,12 @@
   height: 150px;
 }
 .ag-servicos{
+	margin-top: 20px;
+	.selectize-input{
+		min-height: 38px;
+	}
+}
+.ag-tipo{
 	margin-top: 20px;
 	ul.select2-choices{
 		li.select2-search-choice{

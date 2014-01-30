@@ -1,0 +1,28 @@
+.row
+  .small-12.columns
+    .tt
+      %h4
+        %i.fa.fa-cogs 
+        Gerenciar Atendimentos
+  .small-12.columns
+    %table
+      %thead
+        %tr
+          %th ID
+          %th Nome Completo
+          %th Origem
+          %th Destino
+          %th Pessoas
+          %th Data Ida
+          %th Data Volta
+      %tbody
+        - @atendimento.each do |atendimento|
+          %tr
+            %td= atendimento.id
+            %td= link_to atendimento.nome_completo , atendimento_path(atendimento) 
+            %td= atendimento.origem
+            %td= atendimento.destino
+            %td= pessoas(atendimento)
+            %td= atendimento.data_ida
+            %td= atendimento.data_volta
+  .small-12.columns
