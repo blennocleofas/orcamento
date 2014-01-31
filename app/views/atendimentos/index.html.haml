@@ -8,21 +8,21 @@
     %table
       %thead
         %tr
-          %th ID
           %th Nome Completo
           %th Origem
           %th Destino
           %th Pessoas
           %th Data Ida
           %th Data Volta
+          %th Obs
       %tbody
         - @atendimento.each do |atendimento|
           %tr
-            %td= atendimento.id
-            %td= link_to atendimento.nome_completo , atendimento_path(atendimento) 
-            %td= atendimento.origem
-            %td= atendimento.destino
+            %td= link_to atendimento.cliente.nome_completo, atendimento_path(atendimento) 
+            %td{:width => "100px"}= atendimento.origem
+            %td{:width => "100px"}= atendimento.destino
             %td= pessoas(atendimento)
             %td= atendimento.data_ida
             %td= atendimento.data_volta
+            %td{:width => "200px"}= atendimento.obs
   .small-12.columns

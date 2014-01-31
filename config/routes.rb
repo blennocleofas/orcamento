@@ -14,7 +14,11 @@ Orcamento::Application.routes.draw do
   get "cias/destroy"
   get "cias/update"
   get "sessions" => 'sessions#create'
+
+  #API
   get "api/cliente" => 'atendimentos#cliente'
+  get "api/aeroporto" => 'atendimentos#aeroporto'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

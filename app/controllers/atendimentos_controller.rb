@@ -33,6 +33,15 @@ class AtendimentosController < ApplicationController
     @cliente = Cliente.regular_search(params[:q])
     render :json => @cliente, :callback => params[:callback]
   end
+
+  def aeroporto
+    key = "bXobBk4d"
+    query = params[:q]
+    response = HTTParty.get("http://free.rome2rio.com/api/1.2/json/Autocomplete?key=#{key}&query=#{query}")
+    #response = HTTParty.get('https://graph.facebook.com/zuck')
+    #body = JSON.parse(response.body)
+    render json: response.body
+  end
   private 
     def atendimento_params
       params.require(:atendimento).permit(:nome_completo, 

@@ -60,6 +60,7 @@ gem "omniauth-google-oauth2"
 gem 'haml', '~> 4.0.4'
 gem "selectize-rails"
 gem 'tire'
+gem 'yaml_db'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

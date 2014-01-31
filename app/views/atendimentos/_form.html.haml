@@ -23,7 +23,7 @@
         .row
           .large-3.columns.left
             = label_tag  :origem
-            = f.text_field :origem, :required => '', :placeholder => 'Origem'
+            = f.text_field :origem, class: 'b-aeroporto', :required => '', :placeholder => 'Origem'
           .large-3.columns.left
             = label_tag  :destino
             = f.text_field :destino, :required => '', :placeholder => 'Destino'

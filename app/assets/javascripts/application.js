@@ -22,6 +22,7 @@
 //= require cloudinary
 //= require selectize
 //= require busca_cliente
+//= require busca_aeroporto
 
 $(function(){ $(document).foundation(); });
 $(document).ready(function() {
