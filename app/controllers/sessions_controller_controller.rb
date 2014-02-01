@@ -4,10 +4,9 @@ class SessionControllerController < ApplicationController
 
   def create
   	auth_hash = request.env['omniauth.auth']
-  	render "Seu e-mail #{ auth_hash['user_info']['email']} "
-    #user = User.from_omniauth(env["omniauth.auth"])
-    #session[:user_id] = user.id
-    #redirect_to root_url, notice: "Signed in!"
+   user = User.from_omniauth(env["omniauth.auth"])
+   session[:user_id] = user.id
+   redirect_to root_url, notice: "Signed in!"
   end
 
   def destroy
