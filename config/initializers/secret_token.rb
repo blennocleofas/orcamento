@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Orcamento::Application.config.secret_key_base = '259dd01a24d9bcdef365dcd95324ab9015504198077ad96b7ebda3192eeb47277f7069494370a284bd0a00414278f5ca5096ac5bbfbd9d7f0b4aeb8a22ab5f9c'
+Orcamento::Application.config.secret_key_base = <%= ENV['SESSION_KEY'] %>

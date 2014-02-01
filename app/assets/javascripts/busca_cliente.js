@@ -37,7 +37,10 @@ $('.b-nome').selectize({
         });
     },
     create: function(input) {
-        alert('Invalid email address.');
+        $('#myModal').foundation('reveal', 'open');
+        $('.cad-usuario').val(input);
+        $('.cad-email').focus();
+        console.log(input);
         return false;
     }
 });
@@ -84,3 +87,9 @@ $('#select-to').selectize({
         return false;
     }
 });
+
+
+$('#new_cliente').on('ajax:success', function(e, data, status, xhr){
+    console.log(data);
+}
+);

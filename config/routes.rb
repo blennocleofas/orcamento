@@ -1,8 +1,14 @@
 require 'sidekiq/web'
 Orcamento::Application.routes.draw do
 
+  get "clientes/index"
+  get "clientes/save"
+  get "clientes/update"
+  get "clientes/create"
+  get "clientes/destroy"
   # Atendimento Online
   resources :atendimentos
+  resources :clientes
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]

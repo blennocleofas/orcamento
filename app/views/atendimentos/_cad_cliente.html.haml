@@ -1,0 +1,19 @@
+#myModal.reveal-modal.xlarge{"data-reveal" => ''}
+  = nested_form_for Cliente.new, remote: true, :html => {:data => {:abide => ''}} do |f|
+    %fieldset
+      %legend Cadastrar Novo Cliente
+      .large-3.columns.left
+        = label_tag  "Nome"
+        = f.text_field :nome, class: "cad-usuario", :required => '',:placeholder => 'Nome Completo'
+      .large-3.columns.left
+        = label_tag  "Sobrenome"
+        = f.text_field :sobrenome, :required => '',:placeholder => 'Sobrenome'
+      .large-3.columns.left
+        = label_tag  "Email"
+        = f.text_field :telefone, class: "cad-email", :required => '',:placeholder => 'email@provedor.com.br'
+      .large-3.columns.left
+        = label_tag  "Telefone"
+        = f.text_field :email, :required => '',:placeholder => '(62) 9999-9999'
+      .large-12.columns
+        = f.submit "Salvar"
+  %a.close-reveal-modal &#215;
