@@ -6,7 +6,7 @@ class Aeroportos < ActiveRecord::Base
 	            :number_of_replicas => 1,
 	            :analysis => {
 	                :filter => {
-	                  :url_ngram  => {
+	                  :text_ngram  => {
 	                    "type"     => "nGram",
 	                    "max_gram" => 10,
 	                    "min_gram" => 2 }
@@ -14,7 +14,7 @@ class Aeroportos < ActiveRecord::Base
 	                :analyzer => {
 	                  :busca_aeroportos => {
 	                     "tokenizer"    => "standard",
-	                     "filter"       => ["standard", "lowercase", "stop", "kstem", "ngram", "url_ngram"],
+	                     "filter"       => ["standard", "lowercase", "stop", "kstem", "ngram", "text_ngram"],
 	                     "type"         => "custom" }
 
 	                }
