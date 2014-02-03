@@ -1,9 +1,13 @@
 $('.b-nome').selectize({
+    plugins: ['restore_on_backspace'],
     valueField: 'id',
     labelField: 'nome',
-    searchField: ['nome', 'email'],
+    searchField: ['nome', 'email', 'sobrenome'],
     maxItems: 1,
     options: [],
+    onChange: function(name) {
+    return $('#atendimento_email').focus();
+    },
     render: {
         item: function(item, escape) {
             return '<div>' +
@@ -11,8 +15,8 @@ $('.b-nome').selectize({
             '</div>';
         },
         option: function(item, escape) {
-            var label = item.nome || item.email;
-            var caption = item.nome ? item.email : null;
+            var label = item.nome + " " + item.sobrenome || item.email;
+            var caption = item.nome + " " + item.sobrenome ? item.email : null;
             return '<div>' +
                 '<span class="n">' + escape(label) + '</span>' +
                 (caption ? '<span class="e">' + escape(caption) + '</span>' : '') +
@@ -37,59 +41,25 @@ $('.b-nome').selectize({
         });
     },
     create: function(input) {
+        var split = input.split(" ");
+        var nome = split.slice(0, 1).join(' ');
+        var sobrenome = split.slice(1).join(' ');
         $('#myModal').foundation('reveal', 'open');
-        $('.cad-usuario').val(input);
+        $('.cad-usuario').val(nome);
+        $('.cad-snome').val(sobrenome);
         $('.cad-email').focus();
         console.log(input);
         return false;
-    }
-});
-
-
-var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
-                  '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
-
-$('#select-to').selectize({
-    persist: false,
-    maxItems: null,
-    valueField: 'email',
-    labelField: 'name',
-    searchField: ['name', 'email'],
-    options: [],
-    render: {
-        item: function(item, escape) {
-            return '<div>' +
-                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
-                (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
-            '</div>';
-        },
-        option: function(item, escape) {
-            var label = item.name || item.email;
-            var caption = item.name ? item.email : null;
-            return '<div>' +
-                '<span class="label">' + escape(label) + '</span>' +
-                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
-            '</div>';
-        }
     },
-    create: function(input) {
-        if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
-            return {email: input};
-        }
-        var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
-        if (match) {
-            return {
-                email : match[2],
-                name  : $.trim(match[1])
-            };
-        }
-        alert('Invalid email address.');
-        return false;
-    }
 });
 
 
+
+// Enviar Formulário Via Ajax
 $('#new_cliente').on('ajax:success', function(e, data, status, xhr){
     console.log(data);
+    $('b-nome').val(data.id);
+    $('input.b-nome').parent().find('div.selectize-control.b-nome.single');
+    $('#myModal').foundation('reveal', 'close');
 }
 );

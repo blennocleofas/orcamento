@@ -23,6 +23,7 @@
 //= require selectize
 //= require busca_cliente
 //= require busca_aeroporto
+//= require masca_campos
 
 $(function(){ $(document).foundation(); });
 $(document).ready(function() {

@@ -16,21 +16,21 @@
 
      
       <li class="has-dropdown">
-        <a href="#">Orçamento</a>
+        <%= link_to "Orçamentos", orcas_path  %>
         <ul class="dropdown">
           <li><%= link_to "Novo Orçamento", new_orca_path %></li>
         </ul>
       </li>
 
       <li class="has-dropdown">
-        <a href="#">Clientes</a>
+        <%= link_to "Clientes", clientes_path %>
         <ul class="dropdown">
           <li><%= link_to "Buscar Cliente", new_orca_path %></li>
         </ul>
       </li>
 
       <li class="has-dropdown">
-        <a href="#">Atendimento</a>
+        <%= link_to "Atendimento", atendimentos_path %>
         <ul class="dropdown">
           <li> <%= link_to "Novo Atendimento", new_atendimento_path %> </li>
           <li><a href="#">Online</a></li>

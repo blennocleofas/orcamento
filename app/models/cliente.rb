@@ -5,11 +5,11 @@ class Cliente < ActiveRecord::Base
 	belongs_to :orca
 
 	settings :number_of_shards => 1,
-	              :number_of_replicas => 1,
-	              :analysis => {
-	                :filter => {
-	                  :url_ngram  => {
-	                    "type"     => "nGram",
+	         :number_of_replicas => 1,
+	         :analysis => {
+	         	:filter => {
+	            	:url_ngram  => {
+	                	"type"     => "nGram",
 	                    "max_gram" => 10,
 	                    "min_gram" => 2 }
 	                },
