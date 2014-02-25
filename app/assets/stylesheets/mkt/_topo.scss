@@ -5,6 +5,7 @@
 	position: fixed;
 	z-index: 100;
 	width: 100%;
+	top: 0;
 
 	min-height: 104px;
 	border-bottom: 5pt #fff solid;
@@ -43,7 +44,9 @@
 				color: #fff;
 
 			}
-			a.current{
+		}
+		li.active{
+			a{
 				background: #43617e;;
 				border-radius: 5px;
 			}

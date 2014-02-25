@@ -27,17 +27,10 @@
   <script type="text/javascript">
     $(document).ready(function() {
       var pepe = $.fn.fullpage({
-        anchors: ['sobre', 'social', 'atendimento', '4thpage', 'lastPage']
+        anchors: ['home', 'servicos', 'sobre-nos', 'blog', 'guias'],
+        menu: '#menu'
       });
       
-      $('#showExamples').click(function(e){
-        e.stopPropagation();
-        $('#examplesList').toggle();
-      });
-      
-      $('html').click(function(){
-        $('#examplesList').hide();
-      });
     });
   </script>
 

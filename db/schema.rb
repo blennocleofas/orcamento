@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140201033026) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "aereos", force: true do |t|
     t.string   "voo"
     t.string   "cia"
