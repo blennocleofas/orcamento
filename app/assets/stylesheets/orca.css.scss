@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "compass";
 @import "fonts";
-
+@import "mkt/topo";
+@import "mkt/centro";
+@import "mkt/orcamento";
 @mixin font-lana{
 	font-family: 'Lanenar', sans-serif;
 	font-weight: normal;
@@ -77,15 +79,10 @@ span.e:after{
   padding-top: 5px;
 }
 .topo{
-	.logo{
-		background: image-url("logot.png");
-		width: 354px;
-		height: 212px;
-		margin: 0px auto;
-	}
 	.centro{
 		width: 945px;
 		margin: 0px auto;
+		margin-top: 200px;
 		h1{
 			@include font-lana;
 			font-size: 3.7rem;

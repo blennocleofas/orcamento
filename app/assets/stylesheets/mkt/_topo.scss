@@ -1,0 +1,97 @@
+@import "compass";
+@import url(http://fonts.googleapis.com/css?family=Russo+One);
+.section-topo{
+	
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+
+	min-height: 104px;
+	border-bottom: 5pt #fff solid;
+	// needs latest Compass, add '@import "compass"' to your scss
+	background-color: #0487ae; // Old browsers
+	@include filter-gradient(#0487ae, #3f84bc, horizontal); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, #0487ae 0%,#3f84bc 100%));
+	.logo{
+		background-image: image-url("logo-b.png");
+		width: 288px;
+		height: 164px;
+		margin: 0 auto;
+		margin-top: 16px;
+		margin-bottom: -123px;
+		margin-left: -75px;
+	}
+}
+.nav-top{
+	margin-top: 40px;
+	ul{
+		list-style: none;
+		li:first-child{
+			a{
+				margin-left: -15px
+			}
+		}
+		li{
+			display: inline;
+			a{
+				text-rendering: optimizeLegibility;
+				font-family: "Lanenar";
+				font-size: 21px;
+				padding: 5px;
+				color: #fff;
+
+			}
+			a.current{
+				background: #43617e;;
+				border-radius: 5px;
+			}
+		}
+	}
+}
+.section-head{
+	background-color: #43617e;
+	min-height: 216px;
+	margin-top: 105px;
+	h1{
+		text-rendering: optimizeLegibility;
+		font-family: 'Russo One', sans-serif;
+		font-size: 35pt;
+		color: #fff;
+		margin-bottom: 10px;
+		margin-top: 0px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.s1{
+		margin-top: 10px;
+	}
+	.sp{
+		margin-top: 7px;
+		margin-left: 10%;
+		h1{
+		text-align: center;
+		} 
+		p{
+			font-size: 15pt;
+			text-align: center;
+			line-height: 7px;
+		}
+	}	
+	.sub-header{
+		background-image: image-url('header.png');
+		width: 100%;
+		height: 152px;
+		margin-top: -12px;
+	}
+	p{
+		text-rendering: optimizeLegibility;
+		font-family: "Lanenar";
+		color: #fff;
+		font-size: 21pt;
+		line-height: 13px;
+
+	}
+}
+

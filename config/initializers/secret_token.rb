@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Orcamento::Application.config.secret_key_base = ENV['SESSION_KEY']
+Orcamento::Application.config.secret_key_base = ENV['SESSION_KEY'] || 'd5a7e1c89cfc99098bbf5327e216d2937781ae72ff6b2b999641c0820714192c386345dc4c95d2418dfddbfa051dfdef34640bc8ad5650b9c47bb10751a59050
+'
