@@ -61,6 +61,7 @@ gem 'haml', '~> 4.0.4'
 gem "selectize-rails"
 gem 'tire'
 gem 'yaml_db'
+gem 'time_difference'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
