@@ -28,8 +28,6 @@
 $(function(){ $(document).foundation(); });
 $(document).ready(function() {
     $("select[name*='cia']").select2({ width: 'resolve' });
-    $('#servicos').selectize();
-
     $("#tipo").select2({ 
       width: 'resolve',
       heigth: 'resolve', 
