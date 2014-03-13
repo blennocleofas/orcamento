@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require jquery.fullPage
  *= require font_lane
  *= require foundation_and_overrides
  *= require orca

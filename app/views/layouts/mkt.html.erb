@@ -23,27 +23,32 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>  
 
-  
   <%= javascript_include_tag "mkt" %>
   
+<script type="text/javascript">
 
 
-  <script type="text/javascript">
+  $(document).ready(function() {
+    setInterval(function () {
+      datas($('#countdown').data().time,document.getElementById("countdown"));
+    }, 1000);
+  });
+  
+</script>
 
- 
-    $(document).ready(function() {
-      var pepe = $.fn.fullpage({
-        anchors: ['home', 'servicos', 'sobre-nos', 'blog', 'guias'],
-        menu: '#menu'
-      });
-      setInterval(function () {
-        datas($('#countdown').data().time,document.getElementById("countdown"));
-      }, 1000);
-    });
-    
-  </script>
 </head>
 <body>
+
 <%= yield %>
+<%= javascript_include_tag "scrollReveal.min" %>
+<script>
+   
+    window.scrollReveal = new scrollReveal({reset: true});
+
+    $( document ).ready(function() {
+        $('.animado').show();
+    });
+    
+</script>
 </body>
 </html>

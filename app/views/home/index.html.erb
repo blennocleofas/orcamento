@@ -1,9 +1,9 @@
 <%= render :partial => "topo" %>
-<div class="section active">
+<div class="section home" id="home" data-menuanchor="home">
 	
 	<div class="section-head">
 	  <div class="row">
-	    <div class="large-5 columns">
+	    <div class="large-5 columns" data-scroll-reveal="enter left and move 50px over 1.33s">
 	    <div class="s1">
 	     <%= data_restante.html_safe %>
 	      <p>
@@ -14,7 +14,7 @@
 	      </p>
 	      </div>
 	    </div>
-	    <div class="large-5 large-offset-2 columns">
+	    <div class="large-5 large-offset-2 columns" data-scroll-reveal="enter right and move 50px over 1.33s">
 	    	<div class="sp">
 		    	<h1>Atendimento</h1>
 		    	<p>atendimento@proximoembarque.com.br</p>
@@ -26,18 +26,25 @@
 	  </div>
 	</div>
 	<div class="inicial">
-			<%= render :partial => "form" %>
-	</div>
-</div>
-<div class="section home-bg"></div>
-<div class="section">
-	<div class='sp'>
 		<div class="row">
-			<div class="large-5 columns">
-				 <h1 data-scrollreveal="enter from the top over 1.5s">scrollReveal.js</h1>
+			<div class="large-6 columns">
+				<h1>Teste</h1>
+			</div>
+  			<div class="large-6 columns oc" data-scroll-reveal="enter right after 0.5s">
+				<%= render :partial => "form" %>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="section"></div>
-<div class="section"></div>
+<div class="section home-bg" id="servicos" data-menuanchor="servicos"></div>
+<div class="section" id="sobre-nos" data-menuanchor="sobre">
+	<div class='sp'>
+		<div class="row">
+			<div class="large-5 columns">
+				   <div data-scroll-reveal="enter top over 0.5s and move 200px"> Teste </div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section" id="blog"></div>
+<div class="section" id="guias"></div>

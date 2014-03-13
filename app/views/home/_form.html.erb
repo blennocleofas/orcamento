@@ -1,37 +1,52 @@
-<form class='orcamento-online'>
-  <div class="row">
-    <div class="large-12 columns">
-      <h4>Orçamento <span>Online</span></h4>
-    </div>
-    <div class="large-4 columns">
-        <input type="text" placeholder="Nome Completo" />
-      </label>
-    </div>
-    <div class="large-2 columns">
-        <input type="text" placeholder="Telefone" />
-      </label>
-    </div>
-    <div class="large-3 columns">
-        <input type="text" placeholder="E-mail" />
-      </label>
-    </div>
-    <div class="large-3 columns">
-    <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Só Ida</label>
-    <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Ida e Volta</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
-       <input type="text" placeholder="Origem" />
-      </label>
-    </div>
-    <div class="large-4 columns">
-       <input type="text" placeholder="Destino" />
-      </label>
-    </div>
-    <div class="large-2 columns">
-    </div>
-    <div class="large-2 columns">
-    </div>
-  </div>
-</form>
+
+    <form class='orcamento-online'>
+      <div class="row">
+        <div class="large-12 columns">
+          <h4>Orçamento <span>Online</span></h4>
+        </div>
+        <div class="large-12 columns left">
+          <input id="checkbox1" type="radio"><label for="checkbox1">Ida e Volta</label>
+          <input id="checkbox2" type="radio"><label for="checkbox2">Somente ida</label>
+
+        </div>
+
+        <div class="large-6 columns">
+          <label>Origem </label>
+          <input type="text" placeholder="Origem" />
+
+        </div>
+        <div class="large-6 columns">
+          <label>Destino</label>
+          <input type="text" placeholder="Destino" />
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Data Ida</label>
+          <input type="text" placeholder="Data Ida" />
+        </div>
+        <div class="large-6 columns left">
+          <label>Data Volta</label>
+          <input type="text" placeholder="Data Volta" />
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="large-3 columns left">
+         <label>Adultos: </label> 
+         <input type="text" placeholder="Adultos" />
+       </div>
+       <div class="large-3 columns left">
+         <label>Crianças: </label> 
+         <input type="text" placeholder="Crianças" />
+       </div>
+       <div class="large-3 columns left">
+        <label>Bebês: </label>
+        <input type="text" placeholder="Bebês" />
+      </div>
+      <div class="large-3 columns left">
+       <input type="submit" class="button tiny font13" value="Enviar"  />
+     </div>
+   </div>
+ </form>
