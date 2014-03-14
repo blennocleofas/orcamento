@@ -19,12 +19,16 @@
        var console = { log: function() {} };
     </script>
   <![endif]-->
-    
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>  
 
-  <%= javascript_include_tag "mkt" %>
   
+
+
+</head>
+<body>
+
+<%= yield %>
+<%= javascript_include_tag "mkt" %>
+<%= javascript_include_tag "scrollReveal.min" %>
 <script type="text/javascript">
 
 
@@ -35,12 +39,6 @@
   });
   
 </script>
-
-</head>
-<body>
-
-<%= yield %>
-<%= javascript_include_tag "scrollReveal.min" %>
 <script>
    
     window.scrollReveal = new scrollReveal({reset: true});

@@ -2,10 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Russo+One);
 .section-topo{
 	
-	position: fixed;
-	z-index: 100;
-	width: 100%;
-	top: 0;
 
 	min-height: 104px;
 	border-bottom: 5pt #fff solid;
@@ -49,6 +45,7 @@
 			a{
 				background: #43617e;;
 				border-radius: 5px;
+			
 			}
 		}
 	}
@@ -56,7 +53,6 @@
 .section-head{
 	background-color: #43617e;
 	min-height: 216px;
-	margin-top: 105px;
 	h1{
 		text-rendering: optimizeLegibility;
 		font-family: 'Russo One', sans-serif;
