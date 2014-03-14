@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201033026) do
+ActiveRecord::Schema.define(version: 20140314133442) do
 
   create_table "aereos", force: true do |t|
     t.string   "voo"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20140201033026) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cliente_id"
+    t.string   "atendimento"
+    t.integer  "fonte_id"
   end
 
   add_index "atendimentos", ["cliente_id"], name: "index_atendimentos_on_cliente_id", using: :btree
@@ -113,6 +115,13 @@ ActiveRecord::Schema.define(version: 20140201033026) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
+  create_table "fontes", force: true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "hotels", force: true do |t|
     t.string  "nome"
     t.string  "foto"
@@ -133,6 +142,13 @@ ActiveRecord::Schema.define(version: 20140201033026) do
   end
 
   add_index "orcas", ["cliente_id"], name: "index_orcas_on_cliente_id", using: :btree
+
+  create_table "statuses", force: true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"

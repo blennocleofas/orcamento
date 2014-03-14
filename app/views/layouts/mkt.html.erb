@@ -10,7 +10,7 @@
   <meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
   <meta name="Resource-type" content="Document" />
 
-  
+
   <%= stylesheet_link_tag "mkt" %>
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">
 
@@ -20,11 +20,12 @@
     </script>
   <![endif]-->
 
-  
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <%= javascript_include_tag "formulario" %>
 
-
+<%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="formApp" ng-controller="formController" >
 
 <%= yield %>
 <%= javascript_include_tag "mkt" %>

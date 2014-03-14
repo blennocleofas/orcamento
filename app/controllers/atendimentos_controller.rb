@@ -10,6 +10,9 @@ class AtendimentosController < ApplicationController
   def new
   	@atendimento = Atendimento.new
   end
+  def salvar
+    render :text => 'Oi'
+  end
 
 
   def create

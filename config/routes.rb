@@ -25,6 +25,10 @@ Orcamento::Application.routes.draw do
   get "api/cliente" => 'atendimentos#cliente'
   get "api/aeroporto" => 'atendimentos#aeroporto'
   
+  namespace :api, defaults: {format: :json} do
+    resources :atendimentos, only: [:index, :create, :update, :destroy]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
