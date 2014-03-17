@@ -19,7 +19,7 @@
        var console = { log: function() {} };
     </script>
   <![endif]-->
-
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
   <%= javascript_include_tag "formulario" %>
 
@@ -47,6 +47,59 @@
     $( document ).ready(function() {
         $('.animado').show();
     });
+
+function initialize() {
+
+ var options = {
+  types: ['(cities)'],
+  componentRestrictions: {country: "br"}
+ };
+
+ $('.cidade').map(function(){
+  var autocomplete = new google.maps.places.Autocomplete(this, options);
+ });
+ 
+}
+
+function selectFirstResult(el) {
+   $(".pac-container").hide();
+   var firstResult = $(".pac-container .pac-item:first .pac-item-query").text() + ' ' + $(".pac-container .pac-item:first .pac-item-query").next().text();
+   
+   var geocoder = new google.maps.Geocoder();
+   geocoder.geocode({"address":firstResult }, function(results, status) {
+       if (status == google.maps.GeocoderStatus.OK) {
+           var lat = results[0].geometry.location.lat(),
+               lng = results[0].geometry.location.lng(),
+               placeName = results[0].address_components[0].long_name,
+               latlng = new google.maps.LatLng(lat, lng);
+               $(el).val(results[0].formatted_address);
+       }
+   });   
+}
+
+codeAddress = function(add){
+  var geocoder = new google.maps.Geocoder();
+  var address = $(add).val();
+
+  var request = {
+      address: address,
+      componentRestrictions: {
+          country: 'BR'
+      }
+  }
+
+  geocoder.geocode(request, function(results, status) {
+    $(add).val(results[0].formatted_address);
+  });   
+   
+}
+
+    $("input.cidade").focusout(function () {
+        if(!$(".pac-container").is(":focus") && !$(".pac-container").is(":visible"))
+            codeAddress(this);
+    });
+
+initialize();
   
 </script>
 </body>

@@ -21,7 +21,9 @@
           <label>Origem: </label>
           <%= text_field_tag "Origem", "", 
             :'ng-model' => 'formData.origem',
-            :placeholder => 'Origem'
+            :placeholder => 'Origem',
+            required: '',
+            class: 'cidade'
           %>
 
 
@@ -30,7 +32,9 @@
           <label>Destino:</label>
           <%= text_field_tag "Destino", "", 
             :'ng-model' => 'formData.destino',
-            :placeholder => 'Destino' 
+            :placeholder => 'Destino',
+            required: '',
+            class: 'cidade'
           %>
         </div>
       </div>
@@ -40,7 +44,8 @@
           <%= text_field_tag "data_ida", "", 
             :'ng-model' => 'formData.data_ida',
             :placeholder => '00/00/0000',
-            class: 'data'
+            class: 'data',
+            required: ''
           %>
         </div>
         <div class="large-6 columns left">
@@ -48,7 +53,8 @@
           <%= text_field_tag "Data Volta", "", 
             :'ng-model' => 'formData.data_volta',
             :placeholder => '00/00/0000',
-            class: 'data'
+            class: 'data',
+            required: ''
           %>
         </div>
 
@@ -58,21 +64,24 @@
          <label>Adultos: </label> 
           <%= text_field_tag "Data Volta", "", 
             :'ng-model' => 'formData.adultos',
-            :placeholder => '0-10' 
+            :placeholder => '0-10',
+            required: '' 
           %>
        </div>
        <div class="large-3 columns left">
          <label>Crianças: </label> 
           <%= text_field_tag "Data Volta", "", 
             :'ng-model' => 'formData.criancas',
-            :placeholder => '0-10' 
+            :placeholder => '0-10',
+            required: ''
           %>
        </div>
        <div class="large-3 columns left">
         <label>Bebês: </label>
           <%= text_field_tag "Data Volta", "", 
             :'ng-model' => 'formData.bebes',
-            :placeholder => '0-10' 
+            :placeholder => '0-10',
+            required: ''
           %>
       </div>
       <div class="large-3 columns left">
