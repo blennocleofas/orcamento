@@ -9,6 +9,7 @@ class AtendimentosController < ApplicationController
 
   def new
   	@atendimento = Atendimento.new
+    render :json => params.inspect
   end
   def salvar
     render :text => 'Oi'

@@ -1,9 +1,11 @@
 @import "compass";
 @import url(http://fonts.googleapis.com/css?family=Russo+One);
 .section-topo{
-	
-
-	min-height: 104px;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	height: 90px;
+	width: 100%;
 	border-bottom: 5pt #fff solid;
 	// needs latest Compass, add '@import "compass"' to your scss
 	background-color: #0487ae; // Old browsers
@@ -16,13 +18,12 @@
 		width: 288px;
 		height: 164px;
 		margin: 0 auto;
-		margin-top: 16px;
 		margin-bottom: -123px;
 		margin-left: -75px;
 	}
 }
 .nav-top{
-	margin-top: 40px;
+	margin-top: 17px;
 	ul{
 		list-style: none;
 		li:first-child{
@@ -52,7 +53,8 @@
 }
 .section-head{
 	background-color: #43617e;
-	min-height: 216px;
+	min-height: 200px;
+	height: 200px;
 	h1{
 		text-rendering: optimizeLegibility;
 		font-family: 'Russo One', sans-serif;
@@ -64,8 +66,12 @@
 		font-weight: bold;
 	}
 	h1#countdown{
-		font-size: 25pt;
+		font-size: 20pt;
 		text-transform: none;
+	}
+	p{
+		font-size: 16pt;
+		line-height: 3px;
 	}
 	.s1{
 		margin-top: 10px;
@@ -73,20 +79,24 @@
 	.sp{
 		margin-top: 7px;
 		margin-left: 10%;
+		
 		h1{
 		text-align: center;
+		font-size: 21pt;
 		} 
 		p{
-			font-size: 15pt;
+			font-size: 16pt;
 			text-align: center;
 			line-height: 7px;
 		}
 	}	
 	.sub-header{
 		background-image: image-url('header.png');
-		width: 100%;
-		height: 152px;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		height: 114px;
 		margin-top: -12px;
+
 	}
 	p{
 		text-rendering: optimizeLegibility;
@@ -97,7 +107,13 @@
 
 	}
 }
+.inicial {
+	background-color: #fff;
+}
 .section{
-	min-height: 700px;
+	  min-height: 650px;
 
+}
+.home{
+	padding-top: 90px;
 }

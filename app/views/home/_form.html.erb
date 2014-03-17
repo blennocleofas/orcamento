@@ -1,5 +1,7 @@
 
-    <%= form_tag "", class: "orcamento-online", :'ng-submit' => 'processForm()' do |f| %>
+    <%= form_tag "", class: "orcamento-online", 
+    :'ng-submit' => 'processForm()', 
+    :'ng-controller'=>"formController" do |f| %>
 
 
 
@@ -9,23 +11,23 @@
           <h4>Orçamento <span>Online</span></h4>
         </div>
         <div class="large-12 columns left">
-          <input id="checkbox1" type="radio"><label for="checkbox1">Ida e Volta</label>
-
-          <input id="checkbox2" type="radio"><label for="checkbox2">Somente ida</label>
+        
+         <input type="radio" name="tipo" value="somente_ida" id="somente_ida" ng-model='formData.tipo'><label for="somente_ida">Somente Ida</label>
+         <input type="radio" name="tipo" value="Ida e Volta" id="ida_volta" ng-model='formData.tipo'><label for="ida_volta">Ida e volta</label>
 
         </div>
 
         <div class="large-6 columns">
-          <label>Origem </label>
+          <label>Origem: </label>
           <%= text_field_tag "Origem", "", 
             :'ng-model' => 'formData.origem',
-            :placeholder => 'Origem' 
+            :placeholder => 'Origem'
           %>
 
 
         </div>
         <div class="large-6 columns">
-          <label>Destino</label>
+          <label>Destino:</label>
           <%= text_field_tag "Destino", "", 
             :'ng-model' => 'formData.destino',
             :placeholder => 'Destino' 
@@ -34,17 +36,19 @@
       </div>
       <div class="row">
         <div class="large-6 columns">
-          <label>Data Ida</label>
-          <%= text_field_tag "dataida", "", 
-            :'ng-model' => 'formData.dataida',
-            :placeholder => '00/00/0000' 
+          <label>Data Ida:</label>
+          <%= text_field_tag "data_ida", "", 
+            :'ng-model' => 'formData.data_ida',
+            :placeholder => '00/00/0000',
+            class: 'data'
           %>
         </div>
         <div class="large-6 columns left">
-          <label>Data Volta</label>
+          <label>Data Volta:</label>
           <%= text_field_tag "Data Volta", "", 
-            :'ng-model' => 'formData.datavolta',
-            :placeholder => '00/00/0000' 
+            :'ng-model' => 'formData.data_volta',
+            :placeholder => '00/00/0000',
+            class: 'data'
           %>
         </div>
 
@@ -72,7 +76,7 @@
           %>
       </div>
       <div class="large-3 columns left">
-       <input type="submit" class="button tiny font13" value="Enviar"  />
+       <input type="submit" class="button tiny font13" value="Avançar"  />
      </div>
    </div>
    </div>

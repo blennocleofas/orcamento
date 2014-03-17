@@ -1,5 +1,5 @@
 <%= render :partial => "topo" %>
-<div class="section home" id="home" data-menuanchor="home">
+<div class="section home" id="home" data-menuanchor="home" data-magellan-destination="home">
 	
 	<div class="section-head">
 	  <div class="row">
@@ -7,10 +7,10 @@
 	    <div class="s1">
 	     <%= data_restante.html_safe %>
 	      <p>
-	        É a única coisa  que
+	        Contagem regresiva
 	      </p>
 	      <p>
-	        Você compra e te faz mais Rico
+	         Em breve mais novidades
 	      </p>
 	      </div>
 	    </div>
@@ -29,23 +29,21 @@
 		<div class="row">
 			<div class="large-6 columns">
 				<h1>Teste</h1>
-				  {{ formData }}
+				  <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
 			</div>
-  			<div class="large-6 columns oc" data-scroll-reveal="enter right after 0.5s">
+  			<div class="large-6 columns oc" data-scroll-reveal="enter right after 0.5s" ng-app="formApp">
 				<%= render :partial => "form" %>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="section home-bg" id="servicos" data-menuanchor="servicos"></div>
-<div class="section" id="sobre-nos" data-menuanchor="sobre">
-	<div class='sp'>
+<div class="section home-bg" id="servicos" data-menuanchor="servicos" data-magellan-destination="servicos"></div>
+<div class="section home-bg2" id="sobre" data-menuanchor="sobre" data-magellan-destination="sobre">
 		<div class="row">
 			<div class="large-5 columns">
 				   <div data-scroll-reveal="enter top over 0.5s and move 200px"> Teste </div>
 			</div>
 		</div>
-	</div>
 </div>
-<div class="section" id="blog"></div>
-<div class="section" id="guias"></div>
+<div class="section" id="blog" data-menuanchor="blog" data-magellan-destination="blog"></div>
+<div class="section" id="guias" data-menuanchor="guias" data-magellan-destination="guias"></div>

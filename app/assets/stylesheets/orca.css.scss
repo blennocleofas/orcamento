@@ -6,6 +6,7 @@
 @import "mkt/topo";
 @import "mkt/centro";
 @import "mkt/orcamento";
+@import "mkt/resposive";
 @mixin font-lana{
 	font-family: 'Lanenar', sans-serif;
 	font-weight: normal;
@@ -105,5 +106,11 @@ span.e:after{
 	background-color: #0487ae; // Old browsers
 	@include filter-gradient(#0487ae, #3f84bc, vertical); // IE6-9
 	@include background-image(linear-gradient(top,  #0487ae 0%,#3f84bc 100%));
+
+}
+
+.home-bg2{
+	
+	background-color: red; // Old browsers
 
 }

@@ -19,7 +19,7 @@ module ApplicationHelper
   
   def data_restante
 
-    data_prevista = Time.local(2014, 4, 31, 8, 59)
+    data_prevista = Time.local(2014, 3, 30, 8, 59)
     timestap_js = data_prevista.to_i * 1000
     a = data_prevista - Time.now
 
